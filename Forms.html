@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: aquamarine;
+        font-size: 25px;
+    }
+
+    fieldset {
+        position: absolute;
+        margin-top: 3%;
+        margin-left: 40%;
+    }
+
+    h2 {
+        text-align: center;
+    }
+    div{
+        text-align: center;
+    }
+    input {
+        height: 25px;
+    }
+</style>
+
+<body>
+    <h2>Rede social</h2>
+
+    <fieldset>
+        <h2 id="cad">Cadastro</h2>
+        <form id="cadastroForm">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome"><br><br>
+            <label for="login">Login:</label>
+            <input type="text" id="login" name="login"><br><br>
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha"><br><br>
+
+            <input type="button" value="Cadastrar" onclick="cadastrar()">
+            <input type="button" value="login" onclick="ir_tela_login()">
+
+        </form>
+
+
+        <h2 style="display:none;" id="log">Login</h2>
+        <form id="loginForm" style="display: none;">
+            <label for="loginEntrar">Login:</label>
+            <input type="text" id="loginEntrar" name="loginEntrar"><br><br>
+            <label for="senhaEntrar">Senha:</label>
+            <input type="password" id="senhaEntrar" name="senhaEntrar"><br><br>
+
+            <input type="button" value="Entrar" onclick="entrar()">
+            <input type="button" value="voltar" onclick="voltar_tela_cadastro()">
+
+        </form>
+
+        <h2 style="display: none;" id="menu">Menu do usuário</h2>
+        <form id="menuForm" style="display: none;">
+                <legend>Escolha uma opção e clique em executar:</legend>
+                <input type="radio" id="post" name="opcao">
+                <label for="post">Post</label><br>
+                <input type="radio" id="timeline" name="opcao">
+                <label for="timeline">Timeline</label><br>
+                <input type="button" value="Sair" onclick="sair_menu_user()">
+                <input type="button" value="Executar" onclick="Executar_acao()">
+        </form>
+
+        <h2 style="display: none;" id="posti">Digite seu post do dia</h2>
+        <form id="field" style="display: none;">
+            <textarea name="texto" id="textpost" cols="30" rows="10"></textarea><br><br>
+            <input type="button" value="Publicar post" id="publicar" onclick="Publicar_post()"><br><br>
+            <input type="button" value="Voltar" id="post_voltar_menu" style="display: none;" onclick="voltar_menu_user()">
+        </form>
+
+        <h2 style="display: none;" id="time_post">Timeline de postagens</h2>
+        <p id="exibir_time" style="display: none;"></p><br><br>
+        <input type="button" value="Voltar" id="time_voltar_menu" style="display: none;" onclick="voltar_menu_user()"><br>
+        <input type="button" value="Ver histórico" id="ver_historico" style="display: none;" onclick="ver_timeline()">
+        
+    </fieldset>
+
+    <script src="Ações.js"></script>
+
+</body>
+
+</html>
